@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Create Tree View -->
+    <record id = 'view_hospital_appointment_tree' model = 'ir.ui.view'>
+        <field name='name'>hospital.appointment.tree</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <!-- to remove create = "0" edit= "0" delete = "0" -->
+            <!-- <tree create="0" delete="0"> -->
+            <tree decoration-success="state=='done'" decoration-danger="state=='cancel'" sample="1" multi_edit="1">
+                <field name="patient_id" optional="show"/>
+                <field name="patient_gender" optional="hide"/>
+                <field name="ref" optional="hide"/>
+                <field name="docter_id" widget="many2one_avatar_user"/>
+                <field name="appointment_time" optional="show"/>
+                <field name="booking_date" optional="show"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="state" optional="show" decoration-muted="state=='draft'" decoration-info="state=='in_consultation'" decoration-success="state=='done'" decoration-danger="state=='cancel'" widget="badge" />
+            </tree>
+        </field>
+    </record>
+    <!-- End -->
+
+    <!-- Create Form View -->
+    <record id = 'view_hospital_appointment_form' model = 'ir.ui.view'>
+        <field name='name'>hospital.appointment.form</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button data-hotkey="a" name="action_draft" string="Reset To Draft" type="object" states="cancel" class="oe_highlight" />
+                    <button data-hotkey="w" name="action_in_consultation" string="In Consultation" type="object" states="draft" class="oe_highlight" />
+                    <button data-hotkey="e" name="action_done" string="Mark as Done" type="object" states="in_consultation" class="oe_highlight" />
+                    <button data-hotkey="r" name="action_cancel" string="Cancel" type="object" states="draft,in_consultation" class="oe_highlight"/>
+                    <!-- options="{'clickable': '1'}" -->
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}" nolabel="1" statusbar_visible="draft,in_consultation,done" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <h1>
+                            <group>
+                                <field name="priority" widget="priority" class="mr-3"/>
+                            </group>
+                        </h1>
+                    </group>
+                    <group>
+                        <field name="patient_id" default_focus="1"/>
+                        <field name="patient_gender"/>
+                        <field name="ref"/>
+                        <field name="docter_id"/>
+                    </group>
+                    <group>
+                        <field name="appointment_time"/>
+                        <button name="action_test" string="object Button" type="object" class="oe_highlight" />
+                        <button name="%(om_hospital.hospital_patient_action)d" string="action Button" type="action" class="oe_highlight" confirm="Are you sure to open the patient action?" help="onClicking this button, you will be redirected to patient recordes" />
+                    </group>
+                    <notebook>
+                        <page string="Prescription" name="prescription">
+                            <group>
+                                <field name="prescription" placeholder="Enter Your Prescription" options="{'collaborative':true,'resizable':true}"/>
+                                <field name="booking_date" />
+                            </group>
+                        </page>
+                        <page string="Pharmacy" name="pharmacy">
+                            <group>
+                                <field name="pharmacy_line_ids">
+                                <!-- editable='bottom|top' if delete this attribute the tree will be a pop up model -->
+                                    <tree editable='bottom'>
+                                        <field name="product_id"/>
+                                        <field name="price_unit"/>
+                                        <field name="qty"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="product_id"/>
+                                            <field name="price_unit"/>
+                                            <field name="qty"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- add chatter in  odoo -->
+                <sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+    <!-- End -->
+
+    <!-- Create Menu Item -->
+    <record id = 'hospital_appointment_action' model = 'ir.actions.act_window'>
+        <field name='name'>Appointments</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <!-- default filter & group by -->
+        <!-- <field name="context">{'search_default_filter_male':1,'search_default_group_by_gender':1}</field> -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                    Add a new appointment
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_appointment" name="Appointments" action="hospital_appointment_action" parent="menu_appointment_master" sequence="0" />
+    <!-- End -->
+</odoo>

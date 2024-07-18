@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Create Search View -->
+    <record id = 'view_hospital_patient_search' model = 'ir.ui.view'>
+        <field name='name'>hospital.patient.search</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Patient Name" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                <field name="name" string="Patient Name"/>
+                <field name="ref"/>
+                <!-- Add Filter -->
+                <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
+                <filter name="filter_fmale" string="Female" domain="[('gender','=','female')]"/>
+                <!-- <separator/>
+                <filter name="filter_kids" string="Kids" domain="[('age','&lt;=',5)]"/> -->
+                <separator/>
+                <filter name="filter_archived" string="Archived" domain="[('active','=',False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
+                </group>
+                <searchpanel>
+                    <field name="gender" icon="fa-users" select="multi" string="Gender" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+    <!-- End -->
+
+    <!-- Create Tree View -->
+    <record id = 'view_hospital_patient_tree' model = 'ir.ui.view'>
+        <field name='name'>hospital.patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Patient Name"/>
+                <field name="age"/>
+                <field name="ref"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+    <!-- End -->
+
+    <!-- Create Form View -->
+    <record id = 'view_hospital_patient_form' model = 'ir.ui.view'>
+        <field name='name'>hospital.patient.form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date_of_birth"/>
+                            <field name="age"/>
+                            <field name="appointment_id"/>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="ref"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+
+                <!-- add chatter in  odoo -->
+                <sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+    <!-- End -->
+    <!-- Create Menu Item -->
+    <record id = 'hospital_patient_action' model = 'ir.actions.act_window'>
+        <field name='name'>Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <!-- default filter & group by -->
+        <!-- <field name="context">{'search_default_filter_male':1,'search_default_group_by_gender':1}</field> -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                    Add a new patient
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_patient" name="Patients" action="hospital_patient_action" parent="menu_patient_master" sequence="0" />
+    <!-- End -->
+</odoo>
