@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Create Tree View -->
+    <record id = 'view_patient_tag_tree' model = 'ir.ui.view'>
+        <field name='name'>patient.tag.tree</field>
+        <field name="model">patient.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Name"/>
+                <field name="color_qwe" widget="color_picker"/>
+                <field name="color_2" widget="color"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <!-- End -->
+
+    <!-- Create Form View -->
+    <record id = 'view_patient_tag_form' model = 'ir.ui.view'>
+        <field name='name'>patient.tag.form</field>
+        <field name="model">patient.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="color_qwe" widget="color_picker"/>
+                            <field name="color_2" widget="color" groups="base.group_no_one"/>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- End -->
+
+    <!-- Create Menu Item -->
+    <record id = 'patient_tag_action' model = 'ir.actions.act_window'>
+        <field name='name'>Patient Tag</field>
+        <field name="res_model">patient.tag</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                  Create your first tag
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_patient_tag" name="Tags" action="patient_tag_action" parent="menu_configuration" sequence="10" />
+    <!-- End -->
+</odoo>

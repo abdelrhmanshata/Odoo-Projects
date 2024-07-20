@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+    <!-- Create Activity View -->
+    <record id = 'view_hospital_appointment_activity' model = 'ir.ui.view'>
+        <field name='name'>hospital.appointment.activity</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <activity string="Appointment">
+                <field name="patient_id"/>
+                <field name="ref"/>
+                <templates>
+                    <div t-name="activity-box">
+                        <img t-att-src="activity_image('hospital.patient', 'image', record.patient_id.raw_value)" t-att-title="record.patient_id.value" t-att-alt="record.patient_id.value"/>
+                        <div>
+                            <field name="ref" display="full"/>
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+    <!-- End -->
+
     <!-- Create Tree View -->
     <record id = 'view_hospital_appointment_tree' model = 'ir.ui.view'>
         <field name='name'>hospital.appointment.tree</field>
@@ -32,7 +53,9 @@
                     <button data-hotkey="a" name="action_draft" string="Reset To Draft" type="object" states="cancel" class="oe_highlight" />
                     <button data-hotkey="w" name="action_in_consultation" string="In Consultation" type="object" states="draft" class="oe_highlight" />
                     <button data-hotkey="e" name="action_done" string="Mark as Done" type="object" states="in_consultation" class="oe_highlight" />
-                    <button data-hotkey="r" name="action_cancel" string="Cancel" type="object" states="draft,in_consultation" class="oe_highlight"/>
+                    <button data-hotkey="r" name="action_cancel" string="Cancel" type="object" states="draft,in_consultation"/>
+                    <!-- <button data-hotkey="r" name="%(om_hospital.cancel_appointment_action)d" string="Cancel" type="action" states="draft,in_consultation"/> -->
+
                     <!-- options="{'clickable': '1'}" -->
                     <field name="state" widget="statusbar" options="{'clickable': '1'}" nolabel="1" statusbar_visible="draft,in_consultation,done" class="oe_highlight"/>
                 </header>
@@ -51,6 +74,7 @@
                         <field name="docter_id"/>
                     </group>
                     <group>
+                        <field name='hide_sales_price' groups='base.group_no_one'/>
                         <field name="appointment_time"/>
                         <button name="action_test" string="object Button" type="object" class="oe_highlight" />
                         <button name="%(om_hospital.hospital_patient_action)d" string="action Button" type="action" class="oe_highlight" confirm="Are you sure to open the patient action?" help="onClicking this button, you will be redirected to patient recordes" />
@@ -58,23 +82,23 @@
                     <notebook>
                         <page string="Prescription" name="prescription">
                             <group>
-                                <field name="prescription" placeholder="Enter Your Prescription" options="{'collaborative':true,'resizable':true}"/>
+                                <field name="prescription" placeholder="Enter Your Prescription" options="{'collaborative':true,'resizable':true,'codeview':true}"/>
                                 <field name="booking_date" />
                             </group>
                         </page>
                         <page string="Pharmacy" name="pharmacy">
                             <group>
                                 <field name="pharmacy_line_ids">
-                                <!-- editable='bottom|top' if delete this attribute the tree will be a pop up model -->
+                                    <!-- editable='bottom|top' if delete this attribute the tree will be a pop up model -->
                                     <tree editable='bottom'>
                                         <field name="product_id"/>
-                                        <field name="price_unit"/>
+                                        <field name="price_unit" attrs="{'column_invisible':[('parent.hide_sales_price','=',True)]}" />
                                         <field name="qty"/>
                                     </tree>
                                     <form>
                                         <group>
                                             <field name="product_id"/>
-                                            <field name="price_unit"/>
+                                            <field name="price_unit" attrs="{'column_invisible':[('parent.hide_sales_price','=',True)]}" />
                                             <field name="qty"/>
                                         </group>
                                     </form>
@@ -102,7 +126,7 @@
         <field name='name'>Appointments</field>
         <field name="res_model">hospital.appointment</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,activity</field>
         <!-- default filter & group by -->
         <!-- <field name="context">{'search_default_filter_male':1,'search_default_group_by_gender':1}</field> -->
         <field name="help" type="html">

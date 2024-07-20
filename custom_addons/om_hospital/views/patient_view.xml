@@ -50,15 +50,18 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
                     <group>
                         <group>
                             <field name="name"/>
+
                             <field name="date_of_birth"/>
                             <field name="age"/>
                             <field name="appointment_id"/>
                         </group>
                         <group>
                             <field name="gender"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color_qwe'}"/>
                             <field name="ref"/>
                             <field name="active" invisible="1"/>
                         </group>

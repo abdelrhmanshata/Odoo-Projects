@@ -32,6 +32,7 @@ class HospitalAppointment(models.Model):
     
     
     pharmacy_line_ids = fields.One2many('appointment.pharmacy.lines','appointment_id',string="Pharmacy lines")
+    hide_sales_price = fields.Boolean(string="Hide Sales Price ")
     
         
     @api.onchange('patient_id')
@@ -64,8 +65,10 @@ class HospitalAppointment(models.Model):
             rec.state = 'done'
             
     def action_cancel(self):
-        for rec in self:
-            rec.state = 'cancel'
+        # for rec in self:
+        #     rec.state = 'cancel'
+        action = self.env.ref("om_hospital.cancel_appointment_action").read()[0]
+        return action    
     
     
     
