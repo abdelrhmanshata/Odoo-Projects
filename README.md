@@ -92,6 +92,8 @@ During this course, the following topics were covered:
 Throughout the course, I created several small projects to apply what I learned. One of the main projects is:
 
 ### OM Hospital
+The Odoo project involves various topics related to the development of Odoo modules, such as: creating modules, adding icons, defining models, creating menus and views, setting up security rights, customizing views and models, adding relationships between models, setting default values, adding chat and field tracking, configuring computed fields, creating change handlers, handling temporary models, and data integration via XML and CSV files. The project provides a comprehensive guide for building and customizing Odoo applications with advanced features and functionalities.
+
 The "om-Hospital-Odoo-Project" covers extensive topics for Odoo module development, including:
 
 1. Module creation and icon setting
