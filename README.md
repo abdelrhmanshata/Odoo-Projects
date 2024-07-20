@@ -92,12 +92,18 @@ During this course, the following topics were covered:
 Throughout the course, I created several small projects to apply what I learned. One of the main projects is:
 
 ### OM Hospital
-A comprehensive module for managing hospital operations, which includes:
-1. **Patient Model**: To manage patient information.
-2. **Appointment Model**: To manage appointments and scheduling.
-3. **Menu**: Custom menus for navigating through the hospital management module.
-4. **Views**: Custom form and tree views for patients and appointments.
-5. **Security File**: Managing access rights and permissions for different users.
+The "om-Hospital-Odoo-Project" covers extensive topics for Odoo module development, including:
+
+1. Module creation and icon setting
+2. Model definitions, menu creation, and window actions
+3. Security settings and access rights
+4. Form, tree, and search views
+5. Filters, grouping, and domain application
+6. Chatter integration and field tracking
+7. Various widgets (priority, badge, color picker)
+8. Relational fields (Many2one, One2many, Many2many)
+9. HTML field functionalities
+10. Wizard creation and data import (XML, CSV)
 
 ## References
 You can follow the complete course on the YouTube channel through this [link](https://www.youtube.com/watch?v=DKxwcMxV02U&list=PLqRRLx0cl0hoZM788LH5M8q7KhiXPyuVU&pp=iAQB).
