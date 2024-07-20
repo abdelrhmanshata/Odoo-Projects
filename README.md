@@ -66,6 +66,27 @@ During this course, the following topics were covered:
 48. **Data Hot Key Enable Button Shortcuts**
 49. **One2many Relational Fields**
 50. **Editable Top and Bottom Attribute**
+51. **Hide One2many Column Based On Parent Record**
+52. **Show Field Or Button Only In Developer Mode**
+53. **Add Image Field**
+54. **Widget Boolean Toggle**
+55. **Color Picker Widget and Color Field**
+56. **Widget Color Field Widgets**
+57. **Add Many2many Field Relational**
+58. **Enable Color Options For Many2many Field**
+59. **Create Activity View**
+60. **Enable Code View In HTML Fields**
+61. **Transient Model**
+62. **Create And Launch Wizard**
+63. **Add Text Field**
+64. **Launch Wizard From Button**
+65. **Load Data From XML File**
+66. **Load Data From CSV File**
+
+
+
+
+
 
 ## Projects
 Throughout the course, I created several small projects to apply what I learned. One of the main projects is:
