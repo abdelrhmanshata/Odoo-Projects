@@ -1,5 +1,4 @@
-# om-Hospital-Odoo-Project
- Odoo Project
+# Odoo-Projects
 
 # Learning Odoo 15 Development
 
