@@ -81,7 +81,26 @@ During this course, the following topics were covered:
 64. **Launch Wizard From Button**
 65. **Load Data From XML File**
 66. **Load Data From CSV File**
-
+67. **Create Module Using Scaffold Command**
+68. **Inherit Model**
+69. **Inherit And Add Field To A Model**
+70. **Inherit A Function**
+71. **Override Create ORM Methods**
+72. **Create Sequence And Generate Sequential Value For Record**
+73. **Override Write ORM Methods**
+74. **Default Get ORM Methods**
+75. **Name Get Function ORM Method**
+76. **Menu And SubMenu Without Specifying Parent**
+77. **Target Inline Window Action**
+77-1. **Odoo Environment self.env Environment Variables**
+78. **Active id and Get Data From Main Model inside Wizard Model**
+79. **Hide Field Based On Context**
+80. **How To Raise Validation Error**
+81. **Apply Domain For Fields**
+82. **Sql Constraints Field Validations**
+83. **Python Constrains Decorator**
+84. **Copy Function Attribute ORM Method**
+85. **How To Override Unlink Method Prevent Deleting Record ORM Method**
 
 
 
@@ -93,7 +112,7 @@ Throughout the course, I created several small projects to apply what I learned.
 ### OM Hospital
 The Odoo project involves various topics related to the development of Odoo modules, such as: creating modules, adding icons, defining models, creating menus and views, setting up security rights, customizing views and models, adding relationships between models, setting default values, adding chat and field tracking, configuring computed fields, creating change handlers, handling temporary models, and data integration via XML and CSV files. The project provides a comprehensive guide for building and customizing Odoo applications with advanced features and functionalities.
 
-The "om-Hospital-Odoo-Project" covers extensive topics for Odoo module development, including:
+- The "om-Hospital" covers extensive topics for Odoo module development, including:
 
 1. Module creation and icon setting
 2. Model definitions, menu creation, and window actions
@@ -105,6 +124,16 @@ The "om-Hospital-Odoo-Project" covers extensive topics for Odoo module developme
 8. Relational fields (Many2one, One2many, Many2many)
 9. HTML field functionalities
 10. Wizard creation and data import (XML, CSV)
+
+
+- The "om-Inheritence" covers extensive topics for Odoo module development, including:
+1.Create Module Using Scaffold Command
+2.Inherit Model
+3.Inherit And Add Field To A Model
+4.Inherit A Function
+5.Override Create ORM Methods
+
+
 
 ## References
 You can follow the complete course on the YouTube channel through this [link](https://www.youtube.com/watch?v=DKxwcMxV02U&list=PLqRRLx0cl0hoZM788LH5M8q7KhiXPyuVU&pp=iAQB).
