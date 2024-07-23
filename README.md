@@ -125,11 +125,11 @@ The "om-Hospital" covers extensive topics for Odoo module development, including
 ### OM Inheritence
 The "om-Inheritence" covers extensive topics for Odoo module development, including:
 
-1.Create Module Using Scaffold Command
-2.Inherit Model
-3.Inherit And Add Field To A Model
-4.Inherit A Function
-5.Override Create ORM Methods
+1. Create Module Using Scaffold Command
+2. Inherit Model
+3. Inherit And Add Field To A Model
+4. Inherit A Function
+5. Override Create ORM Methods
 
 
 
