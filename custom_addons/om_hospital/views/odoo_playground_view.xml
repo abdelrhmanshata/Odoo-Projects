@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Create Form View -->
+    <record id = 'view_odoo_playground_form' model = 'ir.ui.view'>
+        <field name='name'>odoo.playground.form</field>
+        <field name="model">odoo.playground</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="model_id"/>
+                    <field name="code" widget="ace" options="{'model':'python'}"/>
+                </group>
+                <group>
+                    <button name="action_execute" string="Execute" type="object" class="btn-primary" data-hotkey="q"/>
+                </group>
+                <group>
+                    <field name="result"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <!-- End -->
+
+    <!-- Create Menu Item -->
+    <record id = 'playground_action' model = 'ir.actions.act_window'>
+        <field name='name'>Play Ground</field>
+        <field name="res_model">odoo.playground</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name ="target">inline</field>
+    </record>
+
+    <menuitem id="menu_technical" name="Technical" sequence="110" parent="menu_hospital_root">
+        <menuitem id="menu_playground" name="Play Ground" action="playground_action" sequence="10" />
+    </menuitem>
+
+    <!-- End -->
+</odoo>

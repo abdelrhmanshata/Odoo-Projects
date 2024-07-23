@@ -53,8 +53,8 @@
                     <button data-hotkey="a" name="action_draft" string="Reset To Draft" type="object" states="cancel" class="oe_highlight" />
                     <button data-hotkey="w" name="action_in_consultation" string="In Consultation" type="object" states="draft" class="oe_highlight" />
                     <button data-hotkey="e" name="action_done" string="Mark as Done" type="object" states="in_consultation" class="oe_highlight" />
-                    <button data-hotkey="r" name="action_cancel" string="Cancel" type="object" states="draft,in_consultation"/>
-                    <!-- <button data-hotkey="r" name="%(om_hospital.cancel_appointment_action)d" string="Cancel" type="action" states="draft,in_consultation"/> -->
+                    <!-- <button data-hotkey="r" name="action_cancel" string="Cancel" type="object" states="draft,in_consultation"/> -->
+                    <button data-hotkey="r" name="%(om_hospital.cancel_appointment_action)d" context="{'default_appointment_id':active_id ,'hide_appointment':1}" string="Cancel" type="action" states="draft,in_consultation"/>
 
                     <!-- options="{'clickable': '1'}" -->
                     <field name="state" widget="statusbar" options="{'clickable': '1'}" nolabel="1" statusbar_visible="draft,in_consultation,done" class="oe_highlight"/>

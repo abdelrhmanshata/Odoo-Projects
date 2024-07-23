@@ -1,0 +1,4 @@
+67. Create Module Using Scaffold Command In Odoo __ Odoo Scaffold Command __ Odoo Bin(720P_HD)
+"D:\Odoo 15\python\python.exe" "D:\Odoo 15\server\odoo-bin" scaffold om_odoo_inheritence "D:\Odoo 15\server\custom_addons"
+--------------------------------------------------------------------------------------------------------------------------------
+

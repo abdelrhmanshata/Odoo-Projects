@@ -1,4 +1,4 @@
-id,name,active
-patient_tag_ceo,Ceo,True
-patient_tag_vvip,VVip,False
-patient_tag_mrs,Mrs,True
+id,name,active,sequence
+patient_tag_ceo,Ceo,True,5
+patient_tag_vvip,VVip,False,6
+patient_tag_mrs,Mrs,True,7

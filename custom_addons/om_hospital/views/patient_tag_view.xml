@@ -6,6 +6,7 @@
         <field name="model">patient.tag</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="sequence"/>
                 <field name="name" string="Name"/>
                 <field name="color_qwe" widget="color_picker"/>
                 <field name="color_2" widget="color"/>
@@ -24,7 +25,8 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
+                            <field name="name" string="Name"/>
+                            <field name="sequence"/>
                         </group>
                         <group>
                             <field name="color_qwe" widget="color_picker"/>
