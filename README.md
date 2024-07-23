@@ -1,5 +1,4 @@
-# om-Hospital-Odoo-Project
- Odoo Project
+# Odoo-Projects
 
 # Learning Odoo 15 Development
 
@@ -66,17 +65,46 @@ During this course, the following topics were covered:
 48. **Data Hot Key Enable Button Shortcuts**
 49. **One2many Relational Fields**
 50. **Editable Top and Bottom Attribute**
+51. **Hide One2many Column Based On Parent Record**
+52. **Show Field Or Button Only In Developer Mode**
+53. **Add Image Field**
+54. **Widget Boolean Toggle**
+55. **Color Picker Widget and Color Field**
+56. **Widget Color Field Widgets**
+57. **Add Many2many Field Relational**
+58. **Enable Color Options For Many2many Field**
+59. **Create Activity View**
+60. **Enable Code View In HTML Fields**
+61. **Transient Model**
+62. **Create And Launch Wizard**
+63. **Add Text Field**
+64. **Launch Wizard From Button**
+65. **Load Data From XML File**
+66. **Load Data From CSV File**
+
+
+
+
+
 
 ## Projects
 Throughout the course, I created several small projects to apply what I learned. One of the main projects is:
 
 ### OM Hospital
-A comprehensive module for managing hospital operations, which includes:
-1. **Patient Model**: To manage patient information.
-2. **Appointment Model**: To manage appointments and scheduling.
-3. **Menu**: Custom menus for navigating through the hospital management module.
-4. **Views**: Custom form and tree views for patients and appointments.
-5. **Security File**: Managing access rights and permissions for different users.
+The Odoo project involves various topics related to the development of Odoo modules, such as: creating modules, adding icons, defining models, creating menus and views, setting up security rights, customizing views and models, adding relationships between models, setting default values, adding chat and field tracking, configuring computed fields, creating change handlers, handling temporary models, and data integration via XML and CSV files. The project provides a comprehensive guide for building and customizing Odoo applications with advanced features and functionalities.
+
+The "om-Hospital-Odoo-Project" covers extensive topics for Odoo module development, including:
+
+1. Module creation and icon setting
+2. Model definitions, menu creation, and window actions
+3. Security settings and access rights
+4. Form, tree, and search views
+5. Filters, grouping, and domain application
+6. Chatter integration and field tracking
+7. Various widgets (priority, badge, color picker)
+8. Relational fields (Many2one, One2many, Many2many)
+9. HTML field functionalities
+10. Wizard creation and data import (XML, CSV)
 
 ## References
 You can follow the complete course on the YouTube channel through this [link](https://www.youtube.com/watch?v=DKxwcMxV02U&list=PLqRRLx0cl0hoZM788LH5M8q7KhiXPyuVU&pp=iAQB).
