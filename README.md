@@ -101,7 +101,21 @@ During this course, the following topics were covered:
 83. **Python Constrains Decorator**
 84. **Copy Function Attribute ORM Method**
 85. **How To Override Unlink Method Prevent Deleting Record ORM Method**
-
+86. **Stored Compute Field And Its Dependency Re computation Of Stored Compute Field**
+87. **Disable Export Excel Option From Tree View**
+88. **Ondelete Policy (Restrict and Cascade)**
+89. **Hide Fields Based On Conditions In Other Fields**
+90. **Make Field Readonly Based On Condition**
+91. **Make Field Required Based On Conditions**
+92. **Label Attribute oe_edit_only _ Edit Only**
+93. **Add Buttons In Tree View Header Near Create Button**
+94. **Add Buttons In Tree View & Set Icons For Buttons Classes**
+95. **Ondelete Decorator Execute Codes On Deleting a Record**
+96. **Add Buttons Inside Group By Tree View By List View**
+97. **Handling And Debugging Odoo Errors Manual Debugging Trace Odoo Issues**
+98. **Add Settings For Module and Configuration Menu**
+99. **Set Inverse Function For Computed Field Editable Compute Field**
+100. **Searchable Non Stored Compute Field In Odoo and Define Search Function For Field**
 
 ## Projects
 Throughout the course, I created several small projects to apply what I learned. One of the main projects is:
