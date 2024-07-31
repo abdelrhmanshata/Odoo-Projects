@@ -37,4 +37,5 @@ class CancelAppointmentWizard(models.TransientModel):
             raise ValidationError(
                 _("Sorry , cancellation is not allowed on the same day of booking !")
             )
+        self.appointment_id.state='cancel'    
         return

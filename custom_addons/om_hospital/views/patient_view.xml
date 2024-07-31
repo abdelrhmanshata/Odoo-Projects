@@ -7,14 +7,17 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name" string="Patient Name" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                <!-- <field name="name" string="Patient Name" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/> -->
                 <field name="name" string="Patient Name"/>
                 <field name="ref"/>
-                <!-- Add Filter -->
+                <field name="age"/>
+
                 <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
                 <filter name="filter_fmale" string="Female" domain="[('gender','=','female')]"/>
-                <!-- <separator/>
-                <filter name="filter_kids" string="Kids" domain="[('age','&lt;=',5)]"/> -->
+
+                <separator/>
+                <filter name="filter_kids" string="Kids" domain="[('age','&lt;=',5)]"/>
+
                 <separator/>
                 <filter name="filter_archived" string="Archived" domain="[('active','=',False)]"/>
                 <group expand="0" string="Group By">
@@ -33,7 +36,7 @@
         <field name='name'>hospital.patient.tree</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree export_xlsx="0">
                 <field name="name" string="Patient Name"/>
                 <field name="age"/>
                 <field name="ref"/>
@@ -53,19 +56,27 @@
                 <sheet>
                     <field name="image" widget="image" class="oe_avatar"/>
                     <group>
-                        <group>
-                            <field name="name"/>
-
-                            <field name="date_of_birth"/>
-                            <field name="age"/>
-                            <field name="appointment_id"/>
-                        </group>
-                        <group>
-                            <field name="gender"/>
-                            <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color_qwe'}"/>
-                            <field name="ref"/>
-                            <field name="active" invisible="1"/>
-                        </group>
+                        <div class="oe_title">
+                            <h2>
+                                <label for="name" string="Name" class="oe_edit_only"/>
+                                <field name="name"/>
+                            </h2>
+                        </div>
+                    </group>
+                    <group>
+                        <field name="date_of_birth"/>
+                        <field name="age"/>
+                    </group>
+                    <group string="Other Information " name="other_info">
+                        <!-- readonly="1" -->
+                        <field name="ref" attrs="{'readonly':[('age','&lt;=',5)],'required':[('age','&lt;=',5)]}" />
+                        <!-- invisible="1" or attrs="{'invisible':['|',('gender','=','male'),('gender','=','female')]}" -->
+                        <field name="gender" widget="radio"/>
+                        <!-- <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color_qwe'}"/> -->
+                        <field name="tag_ids" widget="many2many_checkboxes" options="{'color_field':'color_qwe'}"/>
+                        <field name="active" invisible="1"/>
+                        <field name="appointment_count"/>
+                        <!-- <field name="appointment_id"/> -->
                     </group>
                 </sheet>
 

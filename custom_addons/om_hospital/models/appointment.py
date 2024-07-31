@@ -8,7 +8,12 @@ class HospitalAppointment(models.Model):
     _description = "Hospital Appointment"
     _rec_name = "ref"
 
-    patient_id = fields.Many2one(comodel_name="hospital.patient", string="Patient")
+    # ondelete="restrict" -> can't delete object is connect a fkey
+    # ondelete="cascade" -> can't delete object is connect a fkey
+
+    patient_id = fields.Many2one(
+        comodel_name="hospital.patient", string="Patient", ondelete="restrict"
+    )
     patient_gender = fields.Selection(related="patient_id.gender", readonly=True)
 
     appointment_time = fields.Datetime(
@@ -70,7 +75,8 @@ class HospitalAppointment(models.Model):
 
     def action_in_consultation(self):
         for rec in self:
-            rec.state = "in_consultation"
+            if rec.state == "draft":
+                rec.state = "in_consultation"
 
     def action_done(self):
         for rec in self:
@@ -83,10 +89,11 @@ class HospitalAppointment(models.Model):
         return action
 
     def unlink(self):
-        if self.state != "draft":
-            raise ValidationError(
-                _("You can delete appointment only in 'Draft'  status !")
-            )
+        for rec in self:
+            if rec.state != "draft":
+                raise ValidationError(
+                    _("You can delete appointment only in 'Draft'  status !")
+                )
         return super(HospitalAppointment, self).unlink()
 
 
