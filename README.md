@@ -116,6 +116,89 @@ During this course, the following topics were covered:
 98. **Add Settings For Module and Configuration Menu**
 99. **Set Inverse Function For Computed Field Editable Compute Field**
 100. **Searchable Non Stored Compute Field In Odoo and Define Search Function For Field**
+101. **Radio Widget Show Selection Field as Radio Buttons Widgets**
+102. **Force Save Attribute Write Value To Readonly Field From Onchange Function**
+103. **Widget Many2many Checkboxes and Many2many Tags Widgets**
+104. **Selection Widget In Odoo**
+105. **Access Value From Settings Odoo Module**
+106. **Log Access Model Attribute Remove Create and Write Fields From Odoo Models**
+107. **Name Create Function ORM Method Use and Working of Name Create Function**
+108. **Hide User Group From Users Form View**
+109. **Aggregate Options In Odoo List View (Sum and Average)**
+110. **Order Attribute In Models**
+111. **Reload (Refresh ) The Screen From Python Code**
+112. **Reference Field In Odoo**
+113. **Show Alerts In Form View Alert Warning & Alert Info**
+114. **Widget Phone & Email & URL**
+115. **Widget Ace In Odoo Mode Python and Mode XML**
+116. **Server Action Add Action Button**
+117. **Progress Widgets (Gauge Widget - ProgressBar Widget - Percentpie Widget _ Graphical Widgets)**
+118. **Calendar View**
+119. **Read Group ORM Methods**
+120. **Add Stat Smart Buttons**
+121. **Widget Handle In Odoo Drag and Change Records In Tree View**
+122. **Basics Of PostgreSQL Query PSQL Insert_ Update_ Select and Delete Queries**
+123. **Monetary Field And Widget Monetary In Odoo Currency Fields**
+124. **Change Order Of Tracking Values In Odoo Enable Ordered Tracking For Fields In Odoo**
+125. **URL Action In Odoo & Redirect To URL From Code**
+126. **Bold Text in Tree & Italic Text In Tree View & Color In Odoo Tree View**
+127. **NoUpdate Attribute & ForceCreate Attribute**
+128. **Odoo Whatsapp Integration Redirect To Whatsapp**
+129. **Customize  PDF Reports From User Interface In Odoo**
+130. **Odoo Create ORM Method
+131. **Odoo Browse ORM Method**
+132. **Odoo Write ORM Method **
+133. **Odoo Unlink ORM Method**
+134. **Odoo Search ORM Method**
+135. **Odoo Search Count ORM Method**
+136. **Odoo Get Metadata**
+137. **Odoo Fields Get**
+138. **Trim Field Attribute**
+139. **Odoo Shell Command Python Console**
+140. **Pass New Field Value From Sale Order To Invoice In Odoo**
+141. **Inherit And Add Field To One2many Field In Odoo**
+142. **Fix Invoice Line Value Missing On Saving issue**
+143. **Kebab Menu In Odoo**
+144. **Active Test In Odoo**
+145. **Prevent Closing Of Wizard In Odoo**
+146. **Decimal Accuracy Precision In Odoo**
+147. **Fix Not A Valid Action On The Model Error In Odoo**
+148. **Display Notification In Odoo**
+149. **Get Code From Postman Application**
+150. **Basic Ubuntu Commands**
+151. **Sponsor Odoo Mates In Github**
+152. **Odoo Message Post Function Add Message To Chatter From Code in Odoo**
+153. **Install Odoo 15 In Cloud Server Scrypt**
+154. **Fix Connection Lost and Connection Restored Error Odoo**
+155. **Enable Multi Processing Configure Workers In Odoo**
+156. **Copy Files To Remote Server Using SCP Command File Transfer**
+157. **Setup Custom Addons Path In Odoo Server Configure Custom Addons Path**
+158. **Return Action With Sticky Notification In Odoo**
+159. **Install Third Party Modules In Odoo Instance**
+160. **Configure Domain Name For Odoo Instance Odoo Deployment**
+161. **Configure SSL For Domain _ Enable Https For Odoo Instance**
+162. **Execute SQL Queries Execution In Odoo**
+163. **Inherit And Add Chatter To Existing Models In Odoo**
+164. **Excludes Attribute In Odoo Prevent Module**
+165. **Add New Field To Sale Report Model In Odoo**
+166. **Odoo External API Authentication From External Application External API Logging in**
+167. **Odoo External API Search And Read From Odoo Database**
+168. **Odoo XMLRPC_ Search Read Method To Read From Database**
+169. **Create Record In Odoo From External Applications**
+170. **Write Into Odoo Database From External Application**
+171. **Delete Records From Odoo Database Using External API**
+172. **Odoo Mates PlayGround Odoo Mates Query Execution**
+174. **Create PDF And Excel Reports In Odoo 15 Excel Reporting Odoo 15 PDF Reports**
+174. **Generate Line No For One2many Fields In Odoo**
+175. **Add Line Number In Odoo Qweb Report _ Line Number Inside For Loop**
+176. **How To Add Barcode And QR Code In Odoo PDF Reports**
+177. **Read Data From Odoo Database And Write Into A  CSV File Using Python Scrypt**
+178. **Create Email Template In Odoo Email Templates**
+179. **Send Email From Odoo Using Email Template Sending Emails From Odoo Using Code**
+180. **Inherit a Super Function How To Override a Inherited Function In Odoo**
+
+
+
 
 ## Projects
 Throughout the course, I created several small projects to apply what I learned. One of the main projects is:
