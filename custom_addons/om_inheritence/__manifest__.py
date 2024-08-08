@@ -6,9 +6,11 @@
     "author": "Odoo Mates",
     "website": "http://www.yourcompany.com",
     "version": "0.1",
-    "depends": ["sale",'sale_stock'],
+    "depends": ["sale", "sale_stock", "mail"],
     "data": [
-        "views/sale_order_view.xml"
+        "views/sale_order_view.xml",
+        "views/account_move_view.xml",
+        "views/partner_category_view.xml",
     ],
     "demo": [],
     "sequence": -100,

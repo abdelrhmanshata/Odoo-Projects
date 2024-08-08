@@ -23,3 +23,8 @@ class SaleOrder(models.Model):
     def write(self, vals):
         _logger.info(f"Writing sale order with vals: {vals}")
         return super(SaleOrder, self).write(vals)
+
+    def _prepare_invoice(self):
+        invoice_vals = super(SaleOrder, self)._prepare_invoice()
+        invoice_vals["so_confirmed_user_id"] = self.confirmed_user_id.id
+        return invoice_vals
